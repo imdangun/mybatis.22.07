@@ -10,9 +10,12 @@ public class Configuration {
 	private static SqlSessionFactory sqlSessionFactory;
 	
 	static {
-		try {
+		try {			
 			Reader reader = Resources.getResourceAsReader("config/sqlMapConfig.xml");
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+			
+//			InputStream stream = Resources.getResourceAsStream("config/sqlMapConfig.xml");
+//			sqlSessionFactory = new SqlSessionFactoryBuilder().build(stream, "hr");
 		} catch(Exception e) {}
 	}
 	
